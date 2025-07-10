@@ -32,7 +32,7 @@ export default function Gallery() {
     <section className="max-w-5xl mx-auto py-12 px-4 animate-fadein bg-gradient-to-r from-white via-blue-50 to-white">
       <h1 className="text-3xl md:text-4xl font-bold text-blue-700 mb-2 text-center">Gallery</h1>
       <p className="text-gray-700 mb-8 text-center max-w-2xl mx-auto">
-        Explore highlights from our events, workshops, and chapter activities. ACM JIT is always buzzing with energy, innovation, and collaboration!
+        Explore highlights from our events, workshops, and chapter activities. JIT ACM is always buzzing with energy, innovation, and collaboration!
       </p>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
         {galleryImages.map((img, idx) => (
@@ -48,7 +48,7 @@ export default function Gallery() {
         ))}
       </div>
       <div className="text-center mt-10">
-        <span className="text-blue-600 font-semibold">Want your event featured? Contact us to share your ACM JIT moments!</span>
+        <span className="text-blue-600 font-semibold">Want your event featured? Contact us to share your JIT ACM moments!</span>
       </div>
     </section>
   );

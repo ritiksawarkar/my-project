@@ -6,7 +6,7 @@ export default function Footer() {
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         {/* Branding */}
         <div className="flex items-center gap-2">
-          <span className="text-xl font-bold text-blue-700">ACM JIT</span>
+          <span className="text-xl font-bold text-blue-700">JIT ACM</span>
           <span className="text-gray-400 text-sm">| Jhulelal Institute of Technology</span>
         </div>
         {/* Quick Links */}
@@ -38,7 +38,7 @@ export default function Footer() {
           </a>
         </div>
       </div>
-      <div className="text-center text-xs text-gray-400 mt-4">&copy; {new Date().getFullYear()} ACM JIT. All rights reserved.</div>
+      <div className="text-center text-xs text-gray-400 mt-4">&copy; {new Date().getFullYear()} JIT ACM. All rights reserved.</div>
     </footer>
   );
 } 

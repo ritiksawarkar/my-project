@@ -142,9 +142,9 @@ export default function Home() {
       {/* About ACM Section */}
       <section className="bg-white py-12 px-4 md:px-16 flex flex-col md:flex-row items-center gap-10 border-b border-gray-100">
         <div className="flex-1 mb-8 md:mb-0">
-          <h2 className="text-3xl font-bold text-blue-700 mb-4">About ACM</h2>
+          <h2 className="text-3xl font-bold text-blue-700 mb-4">About JIT ACM</h2>
           <p className="text-gray-700 text-lg mb-4">
-            ACM JIT is the student chapter of the Association for Computing Machinery at Jhulelal Institute of Technology. Our mission is to foster a vibrant technical community, empower students with knowledge, and organize events, workshops, and competitions that ignite innovation and leadership among budding engineers.
+            JIT ACM is the student chapter of the Association for Computing Machinery at Jhulelal Institute of Technology. Our mission is to foster a vibrant technical community, empower students with knowledge, and organize events, workshops, and competitions that ignite innovation and leadership among budding engineers.
           </p>
           <p className="text-gray-600 text-base">
             We strive to bridge the gap between academia and industry, promote collaborative learning, and provide a platform for students to showcase their talents in computing and technology.

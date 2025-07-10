@@ -27,9 +27,9 @@ export default function About() {
       </ul>
 
       {/* 2. About Our Chapter */}
-      <h2 className="text-2xl font-semibold text-blue-600 mb-2">About ACM JIT Student Chapter</h2>
+      <h2 className="text-2xl font-semibold text-blue-600 mb-2">About JIT ACM Student Chapter</h2>
       <p className="text-gray-800 mb-2">
-        ACM JIT Student Chapter fosters a culture of innovation, collaboration, and continuous learning through workshops, coding events, speaker sessions, and real-world projects.
+        JIT ACM Student Chapter fosters a culture of innovation, collaboration, and continuous learning through workshops, coding events, speaker sessions, and real-world projects.
       </p>
       <ul className="list-disc list-inside text-gray-700 mb-6">
         <li>Established in 2022</li>

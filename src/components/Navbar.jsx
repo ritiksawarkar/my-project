@@ -18,8 +18,9 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-gradient-to-r from-white via-blue-50 to-white shadow-lg flex items-center justify-between px-6 py-2 transition-all duration-300 sticky top-0 z-50">
       {/* Logo */}
-      <Link to="/" className="flex items-center gap-2 hover:scale-105 transition-transform duration-200">
+      <Link to="/" className="flex items-center gap-2 transition-transform duration-200">
         <img src={acmLogo} alt="ACM Logo" className="h-12 w-auto" />
+        <span className="font-semibold text-base text-gray-800 hidden sm:inline">JIT ACM STUDENT CHAPTER</span>
       </Link>
       {/* Hamburger for mobile */}
       <button className="md:hidden ml-auto p-2 rounded focus:outline-none focus:ring-2 focus:ring-blue-400" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle menu">
