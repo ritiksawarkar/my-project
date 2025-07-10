@@ -15,51 +15,92 @@ const badgeColor = (type) => {
 
 export default function EventCard({ event, date }) {
   return (
-    <div className="flex flex-col md:flex-row bg-white rounded-2xl shadow-xl p-0 w-full max-w-md md:w-[500px] border border-blue-100 hover:shadow-2xl hover:scale-[1.03] transition-transform duration-200 overflow-hidden relative group">
-      {/* Image section */}
-      <div className="md:w-1/3 w-full h-40 md:h-auto flex-shrink-0">
+    <div className="flex flex-col bg-white rounded-2xl shadow-xl w-full max-w-md border border-blue-100 hover:shadow-2xl hover:scale-[1.03] transition-transform duration-200 overflow-hidden group">
+      {/* Image section at top */}
+      <div className="w-full h-48 md:h-56 flex-shrink-0">
         <img
           src={event.image}
           alt={event.title}
-          className="w-full h-full object-cover md:rounded-l-2xl md:rounded-tr-none rounded-t-2xl group-hover:brightness-90 transition"
+          className="w-full h-full object-cover rounded-t-2xl group-hover:brightness-90 transition"
         />
       </div>
-      {/* Content section */}
-      <div className="flex-1 flex flex-col justify-between p-6 gap-2">
-        {/* Date badge */}
-        {date && (
-          <span className="absolute top-4 left-4 bg-blue-600 text-white text-xs font-semibold px-3 py-1 rounded-full shadow-md z-10 flex items-center gap-1">
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
-            <span className="ml-1 font-medium">{date}</span>
-          </span>
+      {/* Content section below image */}
+      <div className="flex flex-col justify-between p-6 gap-2">
+        {/* Badge and Title Row */}
+        <div className="flex items-center gap-3 mb-2">
+          {event.badge && (
+            <span className={`inline-block text-xs font-semibold px-3 py-1 rounded-full ${badgeColor(event.badge)} font-sans tracking-wide shadow-sm border border-blue-100 text-center`}>{event.badge}</span>
+          )}
+          <h2 className="text-xl md:text-2xl font-bold text-blue-700 leading-tight font-sans">{event.title}</h2>
+        </div>
+        {/* Date and Location Row */}
+        <div className="flex items-center gap-4 mb-2 text-sm text-gray-500 font-sans">
+          {date && (
+            event.link ? (
+              <a
+                href={event.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 cursor-pointer hover:underline"
+              >
+                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <span>{date}</span>
+              </a>
+            ) : (
+              <span className="flex items-center gap-1">
+                <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg>
+                <span>{date}</span>
+              </span>
+            )
+          )}
+          {event.location && (
+            <span className="flex items-center gap-1">
+              <svg className="w-4 h-4 text-green-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 12.414a4 4 0 10-1.414 1.414l4.243 4.243a1 1 0 001.414-1.414z" /></svg>
+              <span>{event.location}</span>
+            </span>
+          )}
+        </div>
+        {/* Description */}
+        <div className="mb-2">
+          <p className="text-gray-700 text-base font-normal font-sans leading-snug min-h-[60px]">{event.description}</p>
+        </div>
+        {/* Time and Speaker Row */}
+        <div className="flex flex-wrap gap-4 mb-2 text-sm text-gray-500 font-sans">
+          {event.time && (
+            <span className="flex items-center gap-1">
+              <svg className="w-4 h-4 text-orange-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2"/></svg>
+              <span>{event.time}</span>
+            </span>
+          )}
+          {event.speaker && (
+            <span className="flex items-center gap-1">
+              <svg className="w-4 h-4 text-purple-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="7" r="4"/><path strokeLinecap="round" strokeLinejoin="round" d="M5.5 21a7.5 7.5 0 0113 0"/></svg>
+              <span>{event.speaker}</span>
+            </span>
+          )}
+        </div>
+        {/* Agenda List */}
+        {event.agenda && event.agenda.length > 0 && (
+          <ul className="mb-2 pl-5 list-disc text-gray-600 text-sm font-sans">
+            {event.agenda.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
         )}
-        {/* Event badge */}
-        {event.badge && (
-          <span className={`inline-block text-xs font-semibold px-2 py-1 rounded-full mb-2 ${badgeColor(event.badge)} font-sans tracking-wide`}> {/* consistent font */}
-            {event.badge}
-          </span>
-        )}
-        <h2 className="text-2xl font-bold mb-1 text-blue-700 leading-tight font-sans">{event.title}</h2>
-        <p className="text-gray-600 mb-2 text-base font-normal font-sans leading-snug">{event.description}</p>
-        {/* Location */}
-        {event.location && (
-          <p className="text-xs text-gray-500 mb-2 flex items-center gap-1 font-sans">
-            <svg className="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 12.414a4 4 0 10-1.414 1.414l4.243 4.243a1 1 0 001.414-1.414z" /></svg>
-            <span className="ml-1">{event.location}</span>
-          </p>
-        )}
+        {/* Divider */}
+        <div className="border-t border-blue-100 my-2"></div>
         {/* Learn More button or link */}
         {event.link ? (
           <a
             href={event.link}
-            className="mt-auto self-start bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow transition-all"
+            className="mt-2 self-start bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow transition-all"
             target="_blank"
             rel="noopener noreferrer"
           >
             Learn More
           </a>
         ) : (
-          <button className="mt-auto self-start bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow transition-all">
+          <button className="mt-2 self-start bg-blue-500 hover:bg-blue-600 text-white font-semibold px-4 py-2 rounded-lg shadow transition-all">
             Learn More
           </button>
         )}

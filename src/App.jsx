@@ -6,6 +6,7 @@ import Gallery from "./pages/Gallery";
 import Team from "./pages/Team";
 import Resources from "./pages/Resources";
 import Contact from "./pages/Contact";
+import EventDetail from "./pages/EventDetail";
 import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
 import Footer from "./components/Footer";
 import { useEffect } from "react";
@@ -33,6 +34,7 @@ export default function App() {
             <Route path="/team" element={<Team />} />
             <Route path="/resources" element={<Resources />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/events/:date" element={<EventDetail />} />
           </Routes>
         </div>
         <Footer />

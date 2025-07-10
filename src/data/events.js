@@ -7,6 +7,15 @@ const events = [
     link: "/events/codesprint-2025",
     date: "2025-07-10",
     location: "Main Auditorium",
+    time: "10:00 AM - 10:00 AM (next day)",
+    speaker: "Prof. A. Kumar",
+    agenda: [
+      "Opening Ceremony",
+      "Coding Begins",
+      "Midnight Snacks",
+      "Final Presentations",
+      "Award Ceremony"
+    ]
   },
   {
     badge: "Workshop",
@@ -16,6 +25,14 @@ const events = [
     link: "/events/summer-coding-jam",
     date: "2025-07-14",
     location: "Lab 2",
+    time: "2:00 PM - 6:00 PM",
+    speaker: "Ms. R. Singh",
+    agenda: [
+      "Welcome & Introduction",
+      "Team Coding Challenge",
+      "Snacks & Networking",
+      "Prize Distribution"
+    ]
   },
   {
     badge: "Guest Lecture",
@@ -25,6 +42,13 @@ const events = [
     link: "/events/ai-guest-lecture",
     date: "2025-07-21",
     location: "Conference Room",
+    time: "11:00 AM - 1:00 PM",
+    speaker: "Dr. S. Mehta",
+    agenda: [
+      "Introduction to AI",
+      "Real-world Applications",
+      "Q&A Session"
+    ]
   },
   // Add more events as needed, following this structure
 ];
