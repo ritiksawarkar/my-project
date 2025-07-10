@@ -1,31 +1,14 @@
 import React, { useState } from "react";
 import EventCalendar from "./EventCalendar";
 import EventCard from "./EventCard";
+import events from "../data/events";
 
-// Mock event data by date (YYYY-MM-DD)
-const eventsByDate = {
-  "2025-07-10": [
-    {
-      title: "Hackathon: CodeSprint 2025",
-      description: "A 24-hour coding marathon where teams tackle real-world problems. Open to all students. Prizes for top performers!",
-      image: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=compress&w=600",
-    },
-  ],
-  "2025-07-14": [
-    {
-      title: "Summer Coding Jam",
-      description: "Celebrate with code! Fun challenges and prizes for creative solutions.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=compress&w=600",
-    },
-  ],
-  "2025-07-21": [
-    {
-      title: "AI in Everyday Life",
-      description: "Industry expert shares insights on how artificial intelligence is transforming daily experiences and future careers.",
-      image: "https://images.unsplash.com/photo-1503676382389-4809596d5290?auto=compress&w=600",
-    },
-  ],
-};
+// Group events by date (YYYY-MM-DD)
+const eventsByDate = events.reduce((acc, event) => {
+  if (!acc[event.date]) acc[event.date] = [];
+  acc[event.date].push(event);
+  return acc;
+}, {});
 
 export default function Event1() {
   const [selectedDate, setSelectedDate] = useState(null);
